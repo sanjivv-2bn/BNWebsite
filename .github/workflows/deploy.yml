@@ -1,4 +1,4 @@
-# v-final
+# v-timeout-fix
 name: Deploy to Hostinger
 
 on:
@@ -21,14 +21,13 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: /public_html/
-          protocol: ftps
+          protocol: ftp
           port: 21
-          timeout: 60000
+          timeout: 120000
+          security: loose
           log-level: minimal
           exclude: |
             **/.git*
             **/.git*/**
             .github/**
             README.md
-            *.yml
-            *.md
