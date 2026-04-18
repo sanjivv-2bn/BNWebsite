@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | The Bisht Numerologyy</title>
+  <meta name="description" content="E([wordpress.org](https://wordpress.org/documentation/article/create-a-static-front-page/?utm_source=chatgpt.com))he Bisht Numerologyy including name correction, mobile number analysis, crystal guidance, visiting card analysis, baby name design and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --bg-soft:#11141b;
+      --panel:#151922;
+      --line:rgba(201,168,76,.18);
+      --line-strong:rgba(201,168,76,.34);
+      --gold:#c9a84c;
+      --gold-soft:#e6c980;
+      --text:#f3efe4;
+      --text-soft:#c5c0b3;
+      --muted:#8e8a80;
+      --green:#25D366;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:radial-gradient(circle at top, rgba(201,168,76,.08), transparent 28%), var(--bg);
+      color:var(--text);
+      font-family:'Inter',sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+    .section{padding:84px 0}
+    .eyebrow{display:inline-block;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+    h1,h2,h3{line-height:1.1}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,72px);font-weight:700}
+    h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:700}
+    h3{font-size:24px;font-weight:700}
+    p.lead{font-size:18px;color:var(--text-soft)}
+    p.soft{color:var(--text-soft)}
+
+    .topbar{border-bottom:1px solid rgba(255,255,255,.06);background:rgba(8,10,14,.8);backdrop-filter:blur(12px)}
+    .topbar-inner{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14px;color:var(--text-soft)}
+    .topbar a:hover{color:var(--gold-soft)}
+
+    .nav-wrap{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:58px;height:58px;border-radius:50%;border:1px solid var(--line-strong);object-fit:cover;background:#0f1218}
+    .brand-title{font-size:20px;font-weight:800}
+    .brand-sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+    .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-links a{font-size:14px;color:var(--text-soft);font-weight:500}
+    .nav-links a:hover{color:var(--gold-soft)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 24px;font-weight:700;font-size:14px;transition:.25s ease;border:1px solid transparent}
+    .btn-primary{background:var(--gold);color:#17130a;box-shadow:0 12px 26px rgba(201,168,76,.2)}
+    .btn-primary:hover{background:var(--gold-soft);transform:translateY(-1px)}
+    .btn-secondary{border-color:var(--line-strong);color:var(--text);background:transparent}
+    .btn-secondary:hover{border-color:var(--gold);color:var(--gold-soft)}
+    .btn-whatsapp{background:var(--green);color:#fff}
+
+    .hero{padding:74px 0 42px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .hero-card{background:linear-gradient(180deg, rgba(201,168,76,.08), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+    .hero-card ul{list-style:none;display:grid;gap:12px;margin-top:12px}
+    .hero-card li{color:var(--text-soft);padding-left:18px;position:relative}
+    .hero-card li::before{content:"•";position:absolute;left:0;top:0;color:var(--gold)}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+
+    .section-head{max-width:800px;margin:0 auto 42px;text-align:center}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));border:1px solid var(--line);border-radius:24px;padding:28px;transition:.25s ease}
+    .card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+    .icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.22);margin-bottom:18px;color:var(--gold);font-size:22px;font-weight:800}
+    .card p{color:var(--text-soft);font-size:15px;margin:12px 0 18px}
+    .bullet-list{list-style:none;display:grid;gap:10px;margin-bottom:22px}
+    .bullet-list li{position:relative;padding-left:18px;color:var(--text-soft);font-size:14px}
+    .bullet-list li::before{content:"•";position:absolute;left:0;top:0;color:var(--gold)}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .box{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));border:1px solid var(--line);border-radius:28px;padding:32px}
+    .box p,.box li{color:var(--text-soft)}
+    .steps{display:grid;gap:14px;margin-top:18px}
+    .step{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}
+    .step-num{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-strong);color:var(--gold);font-weight:800;background:rgba(201,168,76,.08)}
+    .step h4{font-size:18px;margin-bottom:4px}
+
+    .footer{padding:34px 0 100px;border-top:1px solid rgba(255,255,255,.06)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:24px}
+    .footer p,.footer a{color:var(--text-soft);font-size:14px}
+    .footer h4{margin-bottom:10px}
+    .footer ul{list-style:none;display:grid;gap:10px}
+    .copyright{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;color:var(--muted)}
+    .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;box-shadow:0 18px 34px rgba(37,211,102,.28)}
+
+    @media (max-width: 1024px){
+      .hero-grid,.two-col,.services-grid,.footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 760px){
+      .nav,.topbar-inner,.hero-actions{flex-wrap:wrap}
+      .nav-links{display:none}
+      .hero-grid,.two-col,.services-grid,.footer-grid{grid-template-columns:1fr}
+      .btn{width:100%}
+      .section{padding:64px 0}
+      .card,.box,.hero-card{padding:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a href="tel:+917428333623">Call: +91 7428 333 623</a>
+      <a href="mailto:bisht.sanjeev@gmail.com">bisht.sanjeev@gmail.com</a>
+    </div>
+  </div>
+
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a href="/" class="brand">
+        <img src="https://bishtnumerologyy.com/wp-content/uploads/2024/11/logo-numerology.png" alt="The Bisht Numerologyy logo" />
+        <div>
+          <div class="brand-title">The Bisht Numerologyy</div>
+          <div class="brand-sub">Specialized Service Portfolio</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="#services-grid">Services</a>
+        <a href="#fit">Who It Helps</a>
+        <a href="#contact-cta">Contact</a>
+        <a href="https://bishtnumerologyy.com/blog" target="_blank" rel="noopener">Blog</a>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Extended Service Catalog</div>
+          <h1>Explore the Specialized Services Beyond the Homepage Offers.</h1>
+          <p class="lead">This page is designed for the remaining services that should not crowd the homepage but still deserve a premium presentation and a clear enquiry path.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services-grid">View Services</a>
+            <a class="btn btn-secondary" href="/">Go to Home</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Why this page structure works better</h3>
+          <ul>
+            <li>Home page stays focused and conversion-oriented.</li>
+            <li>Remaining services get proper visibility without clutter.</li>
+            <li>Visitors can scan specialized offers more comfortably.</li>
+            <li>Later, each service can become its own dedicated SEO page.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services-grid">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Additional Services</div>
+          <h2>Specialized Guidance for Personal, Professional and Family Alignment</h2>
+          <p class="lead">Keep these services on the Services page first. The best-performing ones can later be expanded into separate SEO landing pages.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <div class="icon">04</div>
+            <h3>Name Correction</h3>
+            <p>Refine name alignment when identity, opportunity flow or repeated resistance feel out of sync.</p>
+            <ul class="bullet-list">
+              <li>Useful for personal and business naming</li>
+              <li>Supports stronger energetic identity</li>
+              <li>Focused correction rather than random change</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">05</div>
+            <h3>Crystal Guidance</h3>
+            <p>Receive direction on crystal selection based on alignment needs, clarity and energetic support.</p>
+            <ul class="bullet-list">
+              <li>Guided rather than generic recommendation</li>
+              <li>Useful for focus, calm and support</li>
+              <li>Can complement other corrective work</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">06</div>
+            <h3>Visiting Card Analysis</h3>
+            <p>Review whether your business card supports authority, recall and a better first professional impression.</p>
+            <ul class="bullet-list">
+              <li>Business-facing visual correction</li>
+              <li>Useful for founders and professionals</li>
+              <li>Supports stronger brand presentation</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">07</div>
+            <h3>Mobile Number Analysis</h3>
+            <p>Evaluate whether your current number aligns well with your broader personal or business direction.</p>
+            <ul class="bullet-list">
+              <li>Useful for frequently used business numbers</li>
+              <li>Supports alignment-based review</li>
+              <li>Helps assess hidden mismatch points</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">08</div>
+            <h3>Wrist Watch Analysis</h3>
+            <p>Assess whether a frequently worn personal accessory is aligned with your professional and personal energy.</p>
+            <ul class="bullet-list">
+              <li>Positioned as a premium niche advisory</li>
+              <li>Useful for image-conscious professionals</li>
+              <li>Distinctive differentiator service</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">09</div>
+            <h3>New Baby Name Designing</h3>
+            <p>Support families seeking a thoughtfully aligned name direction for a newborn child.</p>
+            <ul class="bullet-list">
+              <li>Family-focused naming guidance</li>
+              <li>Emotionally high-value service</li>
+              <li>Clear standalone premium offer</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">10</div>
+            <h3>Vastu Energy Guidance</h3>
+            <p>Review directional and energetic imbalances in living or working spaces that may affect harmony and flow.</p>
+            <ul class="bullet-list">
+              <li>Useful for home and office concerns</li>
+              <li>Supports environmental alignment</li>
+              <li>Can complement personal consultation</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">11</div>
+            <h3>Company Name Designing</h3>
+            <p>Explore naming direction for firms seeking better alignment, identity and long-term business fit.</p>
+            <ul class="bullet-list">
+              <li>Useful for new ventures and rebranding</li>
+              <li>Supports identity and positioning</li>
+              <li>Can be paired with logo analysis</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">12</div>
+            <h3>Business Alignment Advisory</h3>
+            <p>For founders and decision-makers who want a broader view of identity, timing, brand and directional alignment.</p>
+            <ul class="bullet-list">
+              <li>Higher-ticket positioning opportunity</li>
+              <li>Useful for business owners and founders</li>
+              <li>Builds authority beyond one-off services</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fit">
+      <div class="container two-col">
+        <div class="box">
+          <div class="eyebrow">Who This Page Helps</div>
+          <h2>Useful When the Visitor Needs a More Specific Service</h2>
+          <ul class="bullet-list" style="margin-top:16px;">
+            <li>People who already know what they want checked</li>
+            <li>Visitors comparing multiple specialized services</li>
+            <li>Families seeking naming or home-related guidance</li>
+            <li>Professionals looking for premium niche advisory</li>
+          </ul>
+        </div>
+        <div class="box">
+          <div class="eyebrow">Best Next Step</div>
+          <h2>How to Use This Services Page Properly</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div><h4>Keep Home focused</h4><p>Only flagship services belong on Home.</p></div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div><h4>Send overflow here</h4><p>All other services should live on this Services page.</p></div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div><h4>Split later for SEO</h4><p>Create separate individual pages for the most important services.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact-cta" style="padding-top:0;">
+      <div class="container box" style="text-align:center;background:linear-gradient(180deg, rgba(201,168,76,.08), rgba(255,255,255,.02));">
+        <div class="eyebrow">Contact</div>
+        <h2>Need Help Choosing the Right Service?</h2>
+        <p class="lead">Let the visitor start with WhatsApp when they are unsure which service is right for them.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp Now</a>
+          <a class="btn btn-secondary" href="mailto:bisht.sanjeev@gmail.com">Email Enquiry</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>The Bisht Numerologyy</h4>
+          <p>Premium numerology and alignment guidance for business, identity, family and life decisions.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#services-grid">Services</a></li>
+            <li><a href="https://bishtnumerologyy.com/blog" target="_blank" rel="noopener">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+917428333623">+91 7428 333 623</a></li>
+            <li><a href="mailto:bisht.sanjeev@gmail.com">bisht.sanjeev@gmail.com</a></li>
+            <li><a href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">© 2026 The Bisht Numerologyy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/917428333623" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WA</a>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Free Guide is Ready | The Bisht Numerologyy</title>
+  <meta name="description" content="Download your free copy of The 3-Number Code guide by Sanjivv G Bisht." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --line:rgba(201,168,76,.18);
+      --line-strong:rgba(201,168,76,.34);
+      --gold:#c9a84c;
+      --gold-soft:#e6c980;
+      --text:#f3efe4;
+      --text-soft:#c5c0b3;
+      --muted:#8e8a80;
+      --green:#25D366;
+      --max:960px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:radial-gradient(circle at top center, rgba(201,168,76,.10), transparent 32%),
+                 radial-gradient(circle at bottom center, rgba(201,168,76,.05), transparent 40%),
+                 var(--bg);
+      color:var(--text);
+      font-family:'Inter',sans-serif;
+      line-height:1.6;
+      min-height:100vh;
+      display:flex;flex-direction:column;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+
+    /* ── NAV ── */
+    .nav-wrap{
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(11,13,18,.88);backdrop-filter:blur(18px);
+      padding:0;
+    }
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:48px;height:48px;border-radius:50%;border:1px solid var(--line-strong);object-fit:cover}
+    .brand-title{font-size:18px;font-weight:800}
+    .brand-sub{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+    .nav-home{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid var(--line-strong);border-radius:999px;padding:10px 20px;
+      font-size:13px;font-weight:700;color:var(--text-soft);transition:.2s;
+    }
+    .nav-home:hover{border-color:var(--gold);color:var(--gold-soft)}
+
+    /* ── MAIN ── */
+    main{flex:1;padding:64px 0 80px}
+
+    /* ── SUCCESS BADGE ── */
+    .success-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);
+      border-radius:999px;padding:8px 18px;
+      font-size:13px;font-weight:700;color:#25D366;
+      margin-bottom:22px;
+    }
+    .success-badge .check{
+      width:20px;height:20px;border-radius:50%;
+      background:rgba(37,211,102,.2);
+      display:flex;align-items:center;justify-content:center;font-size:11px;
+    }
+
+    /* ── HERO ── */
+    .ty-hero{text-align:center;max-width:720px;margin:0 auto 56px}
+    .ty-hero h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(38px,5vw,62px);
+      font-weight:700;letter-spacing:-.02em;
+      margin-bottom:18px;line-height:1.08;
+    }
+    .ty-hero h1 span{color:var(--gold)}
+    .ty-hero p{font-size:18px;color:var(--text-soft);max-width:560px;margin:0 auto}
+
+    /* ── DOWNLOAD CARD ── */
+    .download-card{
+      background:linear-gradient(180deg, rgba(201,168,76,.10), rgba(255,255,255,.02));
+      border:1.5px solid rgba(201,168,76,.4);
+      border-radius:32px;
+      padding:48px 44px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:36px;
+      align-items:center;
+      box-shadow:0 30px 80px rgba(0,0,0,.5), 0 0 40px rgba(201,168,76,.12);
+      position:relative;
+      overflow:hidden;
+      margin-bottom:40px;
+    }
+    .download-card::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(ellipse at top left, rgba(201,168,76,.12), transparent 50%);
+      pointer-events:none;
+    }
+    .guide-meta{position:relative;z-index:1}
+    .guide-tag{
+      display:inline-block;margin-bottom:14px;
+      background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);
+      border-radius:999px;padding:5px 14px;
+      font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+    }
+    .guide-meta h2{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(26px,3.5vw,40px);
+      font-weight:700;margin-bottom:10px;letter-spacing:-.01em;
+    }
+    .guide-meta p{color:var(--text-soft);font-size:15px;margin-bottom:20px}
+    .guide-contents{list-style:none;display:grid;gap:8px;margin-bottom:0}
+    .guide-contents li{
+      display:flex;align-items:center;gap:10px;
+      font-size:14px;color:var(--text-soft);
+    }
+    .guide-contents li::before{
+      content:"✦";color:var(--gold);font-size:11px;flex-shrink:0;
+    }
+
+    /* ── DOWNLOAD BUTTON ── */
+    .download-actions{
+      display:flex;flex-direction:column;gap:12px;
+      align-items:center;flex-shrink:0;position:relative;z-index:1;
+    }
+    .btn-download{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      width:180px;
+      background:linear-gradient(135deg,#d4af37,#c9a84c);
+      color:#17130a;border:none;border-radius:18px;
+      padding:20px 18px;
+      cursor:pointer;transition:.3s ease;
+      text-decoration:none;
+      box-shadow:0 14px 30px rgba(201,168,76,.35);
+    }
+    .btn-download:hover{
+      transform:translateY(-3px);
+      box-shadow:0 20px 40px rgba(201,168,76,.45);
+      background:linear-gradient(135deg,#e6c980,#d4af37);
+    }
+    .btn-download .dl-icon{font-size:28px;margin-bottom:6px}
+    .btn-download .dl-text{font-size:14px;font-weight:800;letter-spacing:.02em}
+    .btn-download .dl-sub{font-size:11px;font-weight:500;opacity:.7;margin-top:2px}
+
+    .btn-wa-guide{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      width:180px;background:rgba(37,211,102,.1);
+      border:1px solid rgba(37,211,102,.35);border-radius:14px;
+      padding:13px;font-size:13px;font-weight:700;color:#25D366;
+      transition:.25s;text-decoration:none;
+    }
+    .btn-wa-guide:hover{background:rgba(37,211,102,.18)}
+
+    /* ── WHAT'S NEXT ── */
+    .whats-next{
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+      border:1px solid var(--line);border-radius:28px;padding:36px 40px;
+      margin-bottom:36px;
+    }
+    .whats-next h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:28px;font-weight:700;margin-bottom:6px;
+    }
+    .whats-next > p{color:var(--text-soft);font-size:15px;margin-bottom:28px}
+    .next-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .next-step{
+      background:rgba(255,255,255,.02);border:1px solid var(--line);
+      border-radius:20px;padding:22px 18px;text-align:center;
+    }
+    .next-step .ns-icon{font-size:28px;margin-bottom:10px}
+    .next-step h4{font-size:16px;font-weight:700;margin-bottom:6px}
+    .next-step p{font-size:13px;color:var(--text-soft)}
+    .next-step a{
+      display:inline-flex;align-items:center;justify-content:center;
+      margin-top:14px;border:1px solid var(--line-strong);border-radius:999px;
+      padding:9px 18px;font-size:13px;font-weight:700;color:var(--gold-soft);
+      transition:.2s;
+    }
+    .next-step a:hover{border-color:var(--gold);background:rgba(201,168,76,.06)}
+
+    /* ── FOOTER ── */
+    footer{
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:24px 0;
+      text-align:center;
+      font-size:13px;color:var(--muted);
+    }
+    footer a{color:var(--gold);font-weight:600}
+    footer a:hover{color:var(--gold-soft)}
+
+    /* ── CONFETTI BURST (CSS only) ── */
+    @keyframes float-up{
+      0%{opacity:1;transform:translateY(0) scale(1) rotate(0deg)}
+      100%{opacity:0;transform:translateY(-120px) scale(.6) rotate(360deg)}
+    }
+    .confetti-wrap{
+      position:fixed;bottom:60px;left:50%;transform:translateX(-50%);
+      pointer-events:none;z-index:99;display:flex;gap:6px;
+    }
+    .confetti-wrap span{
+      width:8px;height:8px;border-radius:2px;
+      animation:float-up 1.4s ease-out forwards;
+    }
+    .c1{background:#c9a84c;animation-delay:.05s}
+    .c2{background:#e6c980;animation-delay:.15s;border-radius:50%}
+    .c3{background:#f3efe4;animation-delay:.08s}
+    .c4{background:#c9a84c;animation-delay:.22s;border-radius:50%}
+    .c5{background:#e6c980;animation-delay:.02s}
+    .c6{background:#f3efe4;animation-delay:.18s;border-radius:2px}
+    .c7{background:#c9a84c;animation-delay:.12s}
+
+    @media(max-width:760px){
+      .download-card{grid-template-columns:1fr;padding:28px 24px}
+      .download-actions{flex-direction:row;flex-wrap:wrap;justify-content:flex-start}
+      .btn-download,.btn-wa-guide{width:auto;flex:1;min-width:140px}
+      .next-steps{grid-template-columns:1fr}
+      .whats-next{padding:24px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Confetti burst on load -->
+  <div class="confetti-wrap">
+    <span class="c1"></span><span class="c2"></span><span class="c3"></span>
+    <span class="c4"></span><span class="c5"></span><span class="c6"></span><span class="c7"></span>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="https://bishtnumerologyy.com/wp-content/uploads/2024/11/logo-numerology.png" alt="The Bisht Numerologyy logo" />
+        <div>
+          <div class="brand-title">The Bisht Numerologyy</div>
+          <div class="brand-sub">Authority • Alignment • Action</div>
+        </div>
+      </a>
+      <a class="nav-home" href="index.html">← Back to Home</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- SUCCESS HERO -->
+      <div class="ty-hero">
+        <div class="success-badge">
+          <span class="check">✓</span>
+          You're all set — details received
+        </div>
+        <h1>Your Free Guide is <span>Ready to Download</span></h1>
+        <p>The 3-Number Code PDF is waiting for you below. Takes under 10 minutes to read — and may change how you see every decision you've made.</p>
+      </div>
+
+      <!-- DOWNLOAD CARD -->
+      <div class="download-card">
+        <div class="guide-meta">
+          <span class="guide-tag">Free PDF Guide</span>
+          <h2>The 3-Number Code</h2>
+          <p>By Sanjivv G Bisht · The Bisht Numerologyy</p>
+          <ul class="guide-contents">
+            <li>Birth Number — Your Core Identity & Personality</li>
+            <li>Destiny Number — Your True Direction & Purpose</li>
+            <li>Name Number — Your Public Persona & Brand</li>
+            <li>Misalignment patterns — Relationships, Career & Finance</li>
+            <li>Self-Diagnosis Checklist + Structured Action Plan</li>
+          </ul>
+        </div>
+        <div class="download-actions">
+          <a
+            class="btn-download"
+            href="https://bishtnumerologyy.com/wp-content/uploads/2026/04/The%203-Number%20Code.pdf"
+            download="The_3-Number_Code_Bisht_Numerologyy.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="dl-icon">⬇</span>
+            <span class="dl-text">Download PDF</span>
+            <span class="dl-sub">Free · Instant</span>
+          </a>
+          <a
+            class="btn-wa-guide"
+            href="https://wa.me/917428333623?text=Hi%20Sanjivv%20Sir%2C%20I%20just%20downloaded%20the%203-Number%20Code%20guide.%20I%20have%20a%20question."
+            target="_blank"
+            rel="noopener"
+          >
+            💬 Ask on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- WHAT'S NEXT -->
+      <div class="whats-next">
+        <h3>What Would You Like to Do Next?</h3>
+        <p>The guide gives you the diagnosis. The consultation gives you the correction.</p>
+        <div class="next-steps">
+          <div class="next-step">
+            <div class="ns-icon">📋</div>
+            <h4>Book a Consultation</h4>
+            <p>Get a full numerology reading based on your actual numbers — Birth, Destiny and Name.</p>
+            <a href="index.html#contact">Book Now →</a>
+          </div>
+          <div class="next-step">
+            <div class="ns-icon">🔬</div>
+            <h4>Get Your Logo Analysed</h4>
+            <p>Find out if your business logo is supporting your brand authority or working against it.</p>
+            <a href="index.html#services">View Service →</a>
+          </div>
+          <div class="next-step">
+            <div class="ns-icon">💬</div>
+            <h4>Ask a Question First</h4>
+            <p>Not ready to book yet? Start a WhatsApp conversation and describe your main concern.</p>
+            <a href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 <a href="index.html">The Bisht Numerologyy</a> · bishtnumerologyy.com is a premium consulting brand. Not affiliated with any religious institution.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-remove confetti after animation
+    setTimeout(() => {
+      const c = document.querySelector('.confetti-wrap');
+      if(c) c.style.display = 'none';
+    }, 1600);
+
+    // ── AUTO-DOWNLOAD on page load (1.2s delay so page renders first) ──
+    // Creates an invisible anchor and clicks it — triggers browser download dialog
+    setTimeout(function(){
+      const autoLink = document.createElement('a');
+      autoLink.href = 'https://bishtnumerologyy.com/wp-content/uploads/2026/04/The%203-Number%20Code.pdf';
+      autoLink.download = 'The_3-Number_Code_Bisht_Numerologyy.pdf';
+      autoLink.style.display = 'none';
+      document.body.appendChild(autoLink);
+      autoLink.click();
+      document.body.removeChild(autoLink);
+    }, 1200);
+  </script>
+</body>
+</html>
