@@ -700,18 +700,183 @@
     }
     .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 
-    /* ── FOOTER ── */
-    .footer{padding:34px 0 120px;border-top:1px solid rgba(255,255,255,.06)}
-    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:24px}
-    .footer p,.footer a{color:var(--text-soft);font-size:14px}
-    .footer h4{margin-bottom:10px}
-    .footer ul{list-style:none;display:grid;gap:10px}
-    .footer-disclaimer{
-      margin-top:18px;padding:12px 0;
-      border-top:1px solid rgba(255,255,255,.05);
-      font-size:13px;color:var(--muted);text-align:center;
+    /* ── FOOTER COMPLETE REWRITE ── */
+    .footer{
+      padding:60px 0 0;
+      background:#080a0e;
+      border-top:1px solid rgba(201,168,76,.2);
+      position:relative;
     }
-    .copyright{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;color:var(--muted);text-align:center}
+    .footer::before{
+      content:"";position:absolute;top:0;left:0;right:0;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(201,168,76,.5) 50%,transparent);
+    }
+
+    /* 4-column grid — force it */
+    .footer-top{
+      display:grid !important;
+      grid-template-columns:1.8fr 1fr 1fr 1fr !important;
+      gap:40px;
+      padding-bottom:44px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      align-items:start;
+    }
+
+    /* Brand col */
+    .footer-brand{}
+    .footer-brand img{
+      width:54px;height:54px;border-radius:50%;
+      border:1.5px solid rgba(201,168,76,.4);
+      object-fit:cover;display:block;margin-bottom:14px;
+    }
+    .footer-brand-name{
+      font-size:16px;font-weight:800;color:#f3efe4;margin-bottom:3px;
+    }
+    .footer-brand-tag{
+      display:block;font-size:10px;font-weight:700;letter-spacing:.2em;
+      text-transform:uppercase;color:#c9a84c;margin-bottom:12px;
+    }
+    .footer-brand p{
+      font-size:13px;color:#c5c0b3;line-height:1.7;margin-bottom:18px;
+      max-width:260px;
+    }
+
+    /* Social icons — proper boxes */
+    .footer-socials{
+      display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;
+    }
+    .footer-social{
+      display:inline-flex !important;
+      align-items:center;justify-content:center;
+      width:36px !important;height:36px !important;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:#c5c0b3;
+      font-size:11px;font-weight:800;
+      text-decoration:none;
+      transition:all .2s ease;
+      flex-shrink:0;
+    }
+    .footer-social:hover{
+      border-color:#c9a84c;
+      color:#c9a84c;
+      background:rgba(201,168,76,.1);
+      transform:translateY(-2px);
+    }
+
+    /* Nav columns */
+    .footer-col{}
+    .footer-col h5{
+      font-size:10px;font-weight:800;letter-spacing:.22em;
+      text-transform:uppercase;color:#c9a84c;
+      margin-bottom:14px;padding-bottom:10px;
+      border-bottom:1px solid rgba(201,168,76,.18);
+      display:block;
+    }
+    .footer-col ul{
+      list-style:none !important;
+      padding:0 !important;margin:0 !important;
+      display:flex;flex-direction:column;gap:9px;
+    }
+    .footer-col ul li{list-style:none !important}
+    .footer-col ul li a{
+      font-size:13px;color:#c5c0b3;
+      text-decoration:none;
+      display:inline-block;
+      transition:all .2s ease;
+      line-height:1.4;
+    }
+    .footer-col ul li a:hover{
+      color:#e6c980;
+      transform:translateX(4px);
+    }
+
+    /* Response box */
+    .footer-response-box{
+      margin-top:18px;padding:14px 16px;
+      background:rgba(201,168,76,.06);
+      border:1px solid rgba(201,168,76,.18);
+      border-radius:12px;
+    }
+    .footer-response-box .rb-label{
+      font-size:10px;font-weight:700;letter-spacing:.16em;
+      text-transform:uppercase;color:#c9a84c;margin-bottom:5px;display:block;
+    }
+    .footer-response-box p{
+      font-size:12px;color:#c5c0b3;line-height:1.5;
+    }
+    .footer-response-box strong{color:#f3efe4}
+
+    /* Trust strip */
+    .footer-trust{
+      display:flex;align-items:center;justify-content:center;
+      flex-wrap:wrap;gap:18px;
+      padding:18px 0;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .footer-trust-item{
+      font-size:12px;color:#8e8a80;
+      display:flex;align-items:center;gap:6px;
+    }
+    .footer-trust-item span{color:#c9a84c}
+
+    /* Bottom bar */
+    .footer-bottom{
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:12px;
+      padding:16px 0 100px;
+    }
+    .footer-copyright{font-size:12px;color:#8e8a80}
+    .footer-legal{
+      display:flex;align-items:center;flex-wrap:wrap;
+    }
+    .footer-legal a{
+      font-size:12px;color:#8e8a80;
+      text-decoration:none;
+      padding:0 12px;
+      border-right:1px solid rgba(255,255,255,.1);
+      transition:.2s;white-space:nowrap;
+    }
+    .footer-legal a:first-child{padding-left:0}
+    .footer-legal a:last-child{border-right:none;padding-right:0}
+    .footer-legal a:hover{color:#e6c980}
+    .footer-disclaimer-bar{
+      text-align:center;padding:10px 0 16px;
+      font-size:11px;color:#8e8a80;
+      border-top:1px solid rgba(255,255,255,.05);
+    }
+
+    /* Tablet */
+    @media(max-width:1024px){
+      .footer-top{
+        grid-template-columns:1fr 1fr !important;
+        gap:28px;
+      }
+    }
+
+    /* Mobile */
+    @media(max-width:600px){
+      .footer-top{
+        grid-template-columns:1fr !important;
+        gap:28px;
+      }
+      .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        padding-bottom:120px;
+        gap:16px;
+      }
+      .footer-legal{
+        flex-direction:row;flex-wrap:wrap;gap:0;
+      }
+      .footer-legal a{
+        padding:5px 10px;
+        border-right:1px solid rgba(255,255,255,.08);
+        border-bottom:none;
+      }
+      .footer-trust{justify-content:flex-start;gap:10px}
+    }
 
     /* ── WA FLOAT ── */
     .wa-float{
@@ -751,34 +916,114 @@
     }
 
     @media (max-width: 760px){
+      /* NAV */
       .nav{min-height:72px}
       .menu-toggle{display:inline-flex}
       .nav-links{
         display:none;position:absolute;left:16px;right:16px;top:82px;
         flex-direction:column;align-items:flex-start;gap:16px;
-        background:#0f131a;border:1px solid var(--line);border-radius:18px;padding:18px
+        background:#0f131a;border:1px solid var(--line);border-radius:18px;padding:18px;
+        z-index:99;
       }
       .nav-links.show{display:flex}
       .nav-actions .btn-secondary{display:none}
-      .topbar-inner,.topbar-left,.topbar-right{justify-content:center;text-align:center}
-      .hero,.section{padding-top:64px}
-      .hero-grid,.two-col,.services-grid,.testimonial-grid,.footer-grid,.trust-items,.form-grid{grid-template-columns:1fr}
-      .profile-strip{flex-direction:column;align-items:flex-start}
-      .hero-cta,.cta-actions{flex-direction:column}
-      .btn{width:100%}
-      .about-grid{grid-template-columns:1fr}
-      .about-box,.proof-box,.faq-box,.form-box,.process-box,.cta-box,.service-card,.quote{padding:24px}
-      .trust-item strong{font-size:24px}
-      .hero-copy h1{font-size:34px}
-      .hero-card{max-width:420px;margin:0 auto}
-      .service-card{min-height:auto}
-      .service-card h3, .service-card p {min-height:auto}
-      .service-cta{width:100%}
-      .mobile-sticky{display:flex}
-      .wa-float{bottom:80px}
+
+      /* TOPBAR */
+      .topbar-inner{flex-direction:column;gap:6px;padding:10px 0;min-height:auto}
+      .topbar-left,.topbar-right{justify-content:center;text-align:center;width:100%}
+
+      /* HERO */
+      .hero{padding-top:40px;padding-bottom:32px}
+      .hero-grid{grid-template-columns:1fr;gap:32px}
+      .hero-copy h1{font-size:32px;line-height:1.15}
+      .hero-copy .lead{font-size:16px}
+      .hero-badges{gap:8px}
+      .mini-badge{font-size:12px;padding:6px 12px}
+      .hero-points{grid-template-columns:repeat(3,1fr);gap:10px}
+      .hero-point strong{font-size:22px}
+      .hero-point span{font-size:11px}
+      .hero-cta{flex-direction:column;gap:10px}
+      .hero-cta .btn{width:100%}
+      .hero-card{max-width:100%;margin:0 auto}
+
+      /* AUTHORITY BAR */
+      .authority-inner{gap:8px;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:0 4px}
       .authority-label{display:none}
-      .video-cta-card{padding:28px 24px}
-      .lead-form{padding:24px}
+      .authority-chip{font-size:12px;padding:7px 14px;white-space:nowrap;flex-shrink:0}
+
+      /* TRUST BAR */
+      .trust-items{grid-template-columns:1fr 1fr;gap:12px}
+      .trust-item strong{font-size:20px}
+      .trust-item span{font-size:12px}
+
+      /* LEAD MAGNET */
+      .lead-magnet{padding:44px 0}
+      .lead-magnet-inner{grid-template-columns:1fr;gap:28px}
+      .lead-magnet-copy h2{font-size:26px}
+      .lead-form{padding:24px 20px}
+
+      /* SECTIONS */
+      .section{padding:56px 0}
+
+      /* SERVICES */
+      .services-grid{grid-template-columns:1fr;gap:20px}
+      .service-card{min-height:auto;padding:28px 20px}
+      .service-card h3{min-height:auto;font-size:20px}
+      .service-card p{min-height:auto}
+      .service-cta{width:100%}
+      .featured-card{transform:none}
+
+      /* ABOUT / PROOF */
+      .two-col{grid-template-columns:1fr;gap:20px}
+      .about-box,.proof-box,.faq-box,.form-box,.process-box,.cta-box{padding:24px 20px}
+      .about-grid{grid-template-columns:1fr;gap:12px}
+
+      /* PROCESS */
+      .process-section{padding:56px 0}
+      .process-head{margin-bottom:40px}
+      .process-head h2{font-size:28px}
+      .process-cards{grid-template-columns:1fr;gap:0;padding-top:28px}
+      .process-cards::before{display:none}
+      .process-card{padding:20px 0 20px}
+      .process-card-inner{padding:48px 20px 24px}
+      .process-bottom-cta{flex-direction:column;gap:12px}
+      .process-bottom-cta .btn{width:100%}
+
+      /* VIDEO CTA */
+      .video-cta-card{
+        grid-template-columns:1fr;text-align:center;
+        padding:28px 20px;gap:20px;
+      }
+      .play-btn{margin:0 auto}
+
+      /* TESTIMONIALS */
+      .testimonial-grid{grid-template-columns:1fr;gap:16px}
+      .quote{padding:24px 20px}
+
+      /* CONTACT FORM */
+      .contact-field-row{grid-template-columns:1fr;gap:14px}
+      .contact-field input,.contact-field select{height:58px}
+      .form-box{padding:24px 20px}
+
+      /* CTA BOX */
+      .cta-box{padding:32px 20px}
+      .cta-actions{flex-direction:column;gap:12px}
+      .cta-actions .btn{width:100%}
+
+      /* FOOTER */
+      .footer-top{grid-template-columns:1fr;gap:32px}
+      .footer-trust{gap:14px;justify-content:flex-start}
+      .footer-trust-item{font-size:12px}
+      .footer-bottom{flex-direction:column;align-items:flex-start;gap:16px;padding-bottom:120px}
+      .footer-legal{flex-wrap:wrap;gap:4px}
+      .footer-legal a{font-size:12px;padding:4px 10px;border-right:none;border-bottom:none}
+
+      /* MOBILE STICKY */
+      .mobile-sticky{display:flex}
+      .wa-float{bottom:80px;right:14px;width:52px;height:52px}
+
+      /* BTN */
+      .btn{font-size:14px}
     }
   </style>
 </head>
@@ -1295,33 +1540,100 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>The Bisht Numerologyy</h4>
-          <p>Premium numerology, scientific logo analysis and aura scanning guidance by Sanjivv G Bisht.</p>
+
+      <!-- FOOTER TOP — 4 columns -->
+      <div class="footer-top">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <img src="https://bishtnumerologyy.com/wp-content/uploads/2024/11/logo-numerology.png" alt="The Bisht Numerologyy" />
+          <div class="footer-brand-name">The Bisht Numerologyy</div>
+          <span class="footer-brand-tag">Authority • Alignment • Action</span>
+          <p>Premium numerology, scientific logo analysis and aura scanning by Sanjivv G Bisht — Engineer, MBA, 25+ years MNC experience.</p>
+          <div class="footer-socials">
+            <a class="footer-social" href="https://www.instagram.com/thebishtnumerologyy" target="_blank" rel="noopener" title="Instagram">IG</a>
+            <a class="footer-social" href="https://www.youtube.com/@TheBishtNumerologyy" target="_blank" rel="noopener" title="YouTube">YT</a>
+            <a class="footer-social" href="https://www.facebook.com/TheBishtNumerologyy" target="_blank" rel="noopener" title="Facebook">FB</a>
+            <a class="footer-social" href="https://www.linkedin.com/in/sanjeev-bisht-sanjivv-biisht-169246292" target="_blank" rel="noopener" title="LinkedIn">LI</a>
+            <a class="footer-social" href="https://x.com/bishtnumerology" target="_blank" rel="noopener" title="X">X</a>
+            <a class="footer-social" href="https://wa.me/917428333623" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+          </div>
         </div>
-        <div>
-          <h4>Quick Links</h4>
+
+        <!-- Col 2: Services -->
+        <div class="footer-col">
+          <h5>Services</h5>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="#services">Numerology Consultation</a></li>
+            <li><a href="#services">Business Logo Analysis</a></li>
+            <li><a href="#services">Aura Scanning</a></li>
+            <li><a href="services.html#services-grid">Name Correction</a></li>
+            <li><a href="services.html#services-grid">Crystal Guidance</a></li>
+            <li><a href="services.html#services-grid">Visiting Card Analysis</a></li>
+            <li><a href="services.html#services-grid">Mobile Number Analysis</a></li>
+            <li><a href="services.html#services-grid">Vastu Guidance</a></li>
+            <li><a href="services.html#services-grid">Company Name Designing</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Navigate -->
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Sanjivv</a></li>
+            <li><a href="#services">Flagship Services</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#testimonials">Client Results</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="https://bishtnumerologyy.com/blog/">Blog</a></li>
+            <li><a href="#free-guide">Free 3-Number Guide</a></li>
+            <li><a href="#contact">Book Consultation</a></li>
+            <li><a href="https://thebisht.com/blog/" target="_blank" rel="noopener">Blog</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Contact</h4>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-col">
+          <h5>Get In Touch</h5>
           <ul>
-            <li><a href="tel:+917428333623">+91 7428 333 623</a></li>
-            <li><a href="mailto:bisht.sanjeev@gmail.com">bisht.sanjeev@gmail.com</a></li>
-            <li><a href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="tel:+917428333623">📞 +91 7428 333 623</a></li>
+            <li><a href="mailto:bisht.sanjeev@gmail.com">✉ bisht.sanjeev@gmail.com</a></li>
+            <li><a href="https://wa.me/917428333623" target="_blank" rel="noopener">💬 WhatsApp Us</a></li>
+            <li><a href="#contact">📋 Book Consultation</a></li>
+            <li><a href="#free-guide">📥 Download Free Guide</a></li>
           </ul>
+          <div class="footer-response-box">
+            <span class="rb-label">Response Time</span>
+            <p>We respond within <strong>4 hours</strong> on WhatsApp during business hours.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TRUST STRIP -->
+      <div class="footer-trust">
+        <div class="footer-trust-item"><span>✦</span> Engineer + MBA Background</div>
+        <div class="footer-trust-item"><span>✦</span> 25+ Years Corporate Experience</div>
+        <div class="footer-trust-item"><span>✦</span> 1,200+ People Guided</div>
+        <div class="footer-trust-item"><span>✦</span> Delhi NCR's #1 Numerology Brand</div>
+        <div class="footer-trust-item"><span>✦</span> Logical. Structured. Actionable.</div>
+      </div>
+
+      <!-- FOOTER BOTTOM — copyright + legal links -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 The Bisht Numerologyy. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="https://bishtnumerologyy.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://bishtnumerologyy.com/terms-and-conditions/" target="_blank" rel="noopener">Terms & Conditions</a>
+          <a href="https://bishtnumerologyy.com/disclaimer/" target="_blank" rel="noopener">Disclaimer</a>
+          <a href="https://bishtnumerologyy.com/refund-policy/" target="_blank" rel="noopener">Refund Policy</a>
         </div>
       </div>
-      <div class="footer-disclaimer">
+
+      <div class="footer-disclaimer-bar">
         bishtnumerologyy.com is a premium consulting brand. Not affiliated with any religious institution.
       </div>
-      <div class="copyright">© 2026 The Bisht Numerologyy. All rights reserved.</div>
+
     </div>
   </footer>
 
