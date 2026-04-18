@@ -602,16 +602,93 @@
     details p{padding-top:10px;font-size:14px}
 
     /* ── FORM ── */
-    form{display:grid;gap:14px;margin-top:18px}
+    form{display:grid;gap:0;margin-top:18px}
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+    /* Contact form — premium dark glass fields */
+    .contact-field-row{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:18px;margin-bottom:18px;
+    }
+    .contact-field{
+      display:flex;flex-direction:column;gap:8px;
+    }
+    .contact-label{
+      font-size:11px;font-weight:700;letter-spacing:.16em;
+      text-transform:uppercase;color:var(--gold);
+      padding-left:4px;
+    }
+    .contact-field input,
+    .contact-field select{
+      width:100%;
+      height:64px;
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      border:1.5px solid rgba(201,168,76,.2);
+      border-radius:20px;
+      padding:0 22px;
+      color:var(--text);
+      font-family:'Inter',sans-serif;
+      font-size:15px;
+      font-weight:500;
+      outline:none;
+      transition:.3s ease;
+      -webkit-appearance:none;
+      appearance:none;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 4px 12px rgba(0,0,0,.2);
+    }
+    .contact-field textarea{
+      width:100%;
+      min-height:190px;
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      border:1.5px solid rgba(201,168,76,.2);
+      border-radius:20px;
+      padding:18px 22px;
+      color:var(--text);
+      font-family:'Inter',sans-serif;
+      font-size:15px;
+      font-weight:500;
+      line-height:1.7;
+      outline:none;
+      resize:vertical;
+      transition:.3s ease;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 4px 12px rgba(0,0,0,.2);
+    }
+    .contact-field input::placeholder,
+    .contact-field textarea::placeholder{
+      color:rgba(197,192,179,.45);font-size:14px;font-weight:400;
+    }
+    .contact-field input:focus,
+    .contact-field select:focus,
+    .contact-field textarea:focus{
+      border-color:rgba(201,168,76,.65);
+      background:linear-gradient(180deg,rgba(201,168,76,.07),rgba(201,168,76,.02));
+      box-shadow:0 0 0 4px rgba(201,168,76,.1), 0 4px 20px rgba(0,0,0,.25);
+      transform:translateY(-1px);
+    }
+    .contact-field select{
+      cursor:pointer;color:var(--text-soft);
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+      background-position:right 20px center;
+      padding-right:44px;
+    }
+    .contact-field select option{background:#0d1016;color:var(--text)}
+
+    /* Legacy form inputs for lead magnet etc */
     input,select,textarea{
-      width:100%;background:#0d1016;border:1px solid rgba(255,255,255,.08);border-radius:14px;
-      padding:14px 16px;color:var(--text);font:inherit;outline:none
+      width:100%;background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);border-radius:14px;
+      padding:14px 16px;color:var(--text);font:inherit;outline:none;
     }
     input:focus,select:focus,textarea:focus{border-color:var(--line-strong)}
-    textarea{min-height:118px;resize:vertical}
+
     .form-note{font-size:13px;color:var(--gold);font-weight:600}
     .form-submit-note{font-size:12px;color:var(--muted)}
+
+    @media(max-width:760px){
+      .contact-field-row{grid-template-columns:1fr;gap:14px}
+      .contact-field input,.contact-field select{height:58px}
+    }
 
     /* ── CTA BOX ── */
     .cta-box{
@@ -1144,29 +1221,56 @@
 
         <div class="form-box" id="contact">
           <div class="eyebrow">Book Consultation</div>
-          <h2>Start Your Alignment Check</h2>
-          <p>Fill in your details and we will get back to you within 4 hours on WhatsApp.</p>
+          <h2>Tell Us What's Holding You Back</h2>
+          <p>Share your concern — we will identify the misalignment and recommend the right first step. Response within 4 hours on WhatsApp.</p>
 
-          <form action="https://formspree.io/f/YOUR_ID" method="post">
-            <div class="form-grid">
-              <input type="text" name="name" placeholder="Your Name" required />
-              <input type="tel" name="phone" placeholder="Mobile Number" required />
+          <form id="contactForm" style="margin-top:24px;">
+            <input type="hidden" name="formType" value="Consultation Enquiry" />
+
+            <div class="contact-field-row">
+              <div class="contact-field">
+                <label class="contact-label">Full Name</label>
+                <input type="text" name="name" id="cf-name" placeholder="Your full name" required />
+              </div>
+              <div class="contact-field">
+                <label class="contact-label">WhatsApp Number</label>
+                <input type="tel" name="phone" id="cf-phone" placeholder="+91 XXXXX XXXXX" required />
+              </div>
             </div>
-            <div class="form-grid">
-              <input type="email" name="email" placeholder="Email Address" />
-              <select name="service" required>
-                <option value="">Select Service</option>
-                <option>Full Numerology Consultation</option>
-                <option>Scientific Business Logo Analysis</option>
-                <option>Aura Scanning</option>
-                <option>Name Correction</option>
-                <option>Other Guidance</option>
-              </select>
+
+            <div class="contact-field-row">
+              <div class="contact-field">
+                <label class="contact-label">Email Address</label>
+                <input type="email" name="email" id="cf-email" placeholder="yourname@gmail.com" required />
+              </div>
+              <div class="contact-field">
+                <label class="contact-label">Service Interested In</label>
+                <select name="service" id="cf-service" required>
+                  <option value="">Select a service</option>
+                  <option>Full Numerology Consultation</option>
+                  <option>Scientific Business Logo Analysis</option>
+                  <option>Aura Scanning</option>
+                  <option>Name Correction</option>
+                  <option>Visiting Card Analysis</option>
+                  <option>Mobile Number Analysis</option>
+                  <option>Company Name Designing</option>
+                  <option>Other Guidance</option>
+                </select>
+              </div>
             </div>
-            <textarea name="message" placeholder="Briefly describe your main concern"></textarea>
-            <p class="form-note">We respond within 4 hours on WhatsApp.</p>
-            <button class="btn btn-primary" type="submit" style="width:100%">Submit Enquiry</button>
-            <p class="form-submit-note">Create a free account at formspree.io and replace YOUR_ID in the form action with your form ID to activate this form.</p>
+
+            <div class="contact-field" style="margin-bottom:8px;">
+              <label class="contact-label">What has been feeling off? Describe your main concern <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+              <textarea name="message" id="cf-message" placeholder="Business stagnation, repeated delays, unclear decisions, weak brand response, or anything else that has not resolved despite your effort..."></textarea>
+            </div>
+
+            <p class="form-note" style="margin-bottom:20px;">🔒 We respond within 4 hours on WhatsApp. Your details are never shared.</p>
+
+            <button class="btn btn-primary" type="submit" id="contactSubmitBtn" style="width:100%;padding:20px;font-size:16px;border-radius:16px;letter-spacing:.04em;">
+              <span id="contactBtnText">Submit Enquiry — Get Clarity</span>
+            </button>
+
+            <div id="contactFormMsg" style="display:none;margin-top:14px;padding:14px 18px;border-radius:12px;font-size:14px;font-weight:600;text-align:center;"></div>
           </form>
         </div>
       </div>
@@ -1228,7 +1332,77 @@
   </div>
 
   <script>
-    // ── MAILCHIMP LEAD MAGNET FORM ──
+    // ── CONTACT FORM → GOOGLE SHEETS ──
+    (function(){
+      // Replace this URL with your Google Apps Script Web App URL after setup
+      const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzhc885zzd4X5lha71YKdTLfQf3iLCqJFUvwQKNiYb7ZqcnAw7z-nvIJee7ByvioTkshQ/exec';
+
+      const form    = document.getElementById('contactForm');
+      const btn     = document.getElementById('contactSubmitBtn');
+      const btnTxt  = document.getElementById('contactBtnText');
+      const msgBox  = document.getElementById('contactFormMsg');
+
+      if(!form) return;
+
+      function showMsg(text, success){
+        msgBox.textContent = text;
+        msgBox.style.display = 'block';
+        msgBox.style.background = success ? 'rgba(37,211,102,.12)' : 'rgba(231,76,60,.12)';
+        msgBox.style.border = success ? '1px solid rgba(37,211,102,.3)' : '1px solid rgba(231,76,60,.3)';
+        msgBox.style.color = success ? '#25D366' : '#e74c3c';
+      }
+
+      function resetBtn(){
+        if(btnTxt) btnTxt.textContent = 'Submit Enquiry — Get Clarity';
+        if(btn) btn.disabled = false;
+      }
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        if(btn) btn.disabled = true;
+        if(btnTxt) btnTxt.textContent = 'Sending… please wait';
+        msgBox.style.display = 'none';
+
+        const payload = {
+          name:    document.getElementById('cf-name').value.trim(),
+          phone:   document.getElementById('cf-phone').value.trim(),
+          email:   document.getElementById('cf-email').value.trim(),
+          service: document.getElementById('cf-service').value,
+          message: document.getElementById('cf-message').value.trim(),
+          date:    new Date().toLocaleString('en-IN', {timeZone:'Asia/Kolkata'})
+        };
+
+        try{
+          // Using URL params approach — works reliably with Google Apps Script (no CORS issues)
+          const params = new URLSearchParams({
+            name:    payload.name,
+            phone:   payload.phone,
+            email:   payload.email,
+            service: payload.service,
+            message: payload.message,
+            date:    payload.date
+          });
+
+          const img = new Image();
+          img.src = SHEET_URL + '?' + params.toString();
+          img.onload = img.onerror = function(){};
+
+          // Also try fetch as backup
+          fetch(SHEET_URL + '?' + params.toString(), {
+            method:'GET',
+            mode:'no-cors'
+          }).catch(()=>{});
+
+          showMsg('✅ Enquiry received! We will respond within 4 hours on WhatsApp.', true);
+          form.reset();
+        } catch(err){
+          console.error(err);
+          showMsg('⚠ Could not send. Please WhatsApp us at +91 7428 333 623.', false);
+        }
+        resetBtn();
+      });
+    })();
     // Uses Mailchimp's JSONP endpoint (no CORS issues, works on any static host)
     // Your Mailchimp user ID: 778f1c5beef72f1a77ef575a5
     // List/Audience ID extracted from your connected mcjs script
