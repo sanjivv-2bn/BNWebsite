@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <meta name="google-site-verification" content="google3a3c5b4ccce93c37" />
   <title>Business Numerology Consultant in India | The Bisht Numerologyy</title>
   <meta name="description" content="Get expert guidance on numerology, scientific logo analysis and aura scanning by Sanjivv G Bisht. Trusted by professionals, business owners and families across India." />
@@ -1335,7 +1338,7 @@
     // ── CONTACT FORM → GOOGLE SHEETS ──
     (function(){
       // Replace this URL with your Google Apps Script Web App URL after setup
-      const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzhc885zzd4X5lha71YKdTLfQf3iLCqJFUvwQKNiYb7ZqcnAw7z-nvIJee7ByvioTkshQ/exec';
+      const SHEET_URL = 'https://script.google.com/macros/s/AKfycby_ccew4n0jex24y6gYeiUt00estyvwgjwKwOHp01tHQW0NKERn4tDx1b1KN8GKZE8x/exec';
 
       const form    = document.getElementById('contactForm');
       const btn     = document.getElementById('contactSubmitBtn');
@@ -1374,31 +1377,46 @@
         };
 
         try{
-          // Using URL params approach — works reliably with Google Apps Script (no CORS issues)
+          // JSONP approach — most reliable for Google Apps Script cross-origin
+          const cbName = 'gsCallback_' + Date.now();
           const params = new URLSearchParams({
-            name:    payload.name,
-            phone:   payload.phone,
-            email:   payload.email,
-            service: payload.service,
-            message: payload.message,
-            date:    payload.date
+            name:     payload.name,
+            phone:    payload.phone,
+            email:    payload.email,
+            service:  payload.service,
+            message:  payload.message,
+            date:     payload.date,
+            callback: cbName
           });
 
-          const img = new Image();
-          img.src = SHEET_URL + '?' + params.toString();
-          img.onload = img.onerror = function(){};
+          const timeout = setTimeout(function(){
+            delete window[cbName];
+            const old = document.getElementById('gs-script');
+            if(old) old.remove();
+            showMsg('✅ Enquiry received! We will respond within 4 hours on WhatsApp.', true);
+            form.reset();
+            resetBtn();
+          }, 6000);
 
-          // Also try fetch as backup
-          fetch(SHEET_URL + '?' + params.toString(), {
-            method:'GET',
-            mode:'no-cors'
-          }).catch(()=>{});
+          window[cbName] = function(response){
+            clearTimeout(timeout);
+            delete window[cbName];
+            const old = document.getElementById('gs-script');
+            if(old) old.remove();
+            showMsg('✅ Enquiry received! We will respond within 4 hours on WhatsApp.', true);
+            form.reset();
+            resetBtn();
+          };
 
-          showMsg('✅ Enquiry received! We will respond within 4 hours on WhatsApp.', true);
-          form.reset();
+          const script = document.createElement('script');
+          script.id  = 'gs-script';
+          script.src = SHEET_URL + '?' + params.toString();
+          document.body.appendChild(script);
+
         } catch(err){
           console.error(err);
           showMsg('⚠ Could not send. Please WhatsApp us at +91 7428 333 623.', false);
+          resetBtn();
         }
         resetBtn();
       });

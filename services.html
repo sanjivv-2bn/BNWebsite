@@ -3,11 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services | The Bisht Numerologyy</title>
-  <meta name="description" content="E([wordpress.org](https://wordpress.org/documentation/article/create-a-static-front-page/?utm_source=chatgpt.com))he Bisht Numerologyy including name correction, mobile number analysis, crystal guidance, visiting card analysis, baby name design and more." />
+  <title>All Services | The Bisht Numerologyy — Numerology, Logo Analysis & More</title>
+  <meta name="description" content="Explore all services by Sanjivv G Bisht — Name Correction, Crystal Guidance, Visiting Card Analysis, Mobile Number Analysis, Baby Name Design, Vastu, Company Naming and Business Alignment Advisory." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Bisht Numerologyy",
+    "url": "https://bishtnumerologyy.com/",
+    "description": "Specialized numerology and alignment consulting services by Sanjivv G Bisht — name correction, crystal guidance, visiting card analysis, mobile number analysis and more.",
+    "telephone": "+91 7428 333 623",
+    "areaServed": "India",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Delhi",
+      "addressRegion": "Delhi",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
 
   <style>
     :root{
@@ -39,142 +57,348 @@
     img{max-width:100%;display:block}
     .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
     .section{padding:84px 0}
-    .eyebrow{display:inline-block;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .eyebrow::before,.eyebrow::after{content:"";width:22px;height:1px;background:var(--line-strong)}
     h1,h2,h3{line-height:1.1}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,72px);font-weight:700}
-    h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:700}
-    h3{font-size:24px;font-weight:700}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,72px);font-weight:700;letter-spacing:-.02em}
+    h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:-.02em}
+    h3{font-size:22px;font-weight:700}
     p.lead{font-size:18px;color:var(--text-soft)}
     p.soft{color:var(--text-soft)}
 
+    /* ── URGENCY STRIP ── */
+    .urgency-strip{
+      background:#0f1018;
+      border-bottom:1px solid rgba(201,168,76,.22);
+      padding:9px 0;
+      text-align:center;
+      font-size:13px;
+      font-weight:600;
+      color:var(--gold-soft);
+      letter-spacing:.04em;
+    }
+    .urgency-strip .dot{
+      display:inline-block;width:8px;height:8px;border-radius:50%;
+      background:#e74c3c;margin-right:8px;vertical-align:middle;
+      animation:pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.45;transform:scale(1.3)}
+    }
+
+    /* ── TOPBAR ── */
     .topbar{border-bottom:1px solid rgba(255,255,255,.06);background:rgba(8,10,14,.8);backdrop-filter:blur(12px)}
     .topbar-inner{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14px;color:var(--text-soft)}
     .topbar a:hover{color:var(--gold-soft)}
+    .topbar-left,.topbar-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 
+    /* ── NAV ── */
     .nav-wrap{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
     .brand{display:flex;align-items:center;gap:14px}
     .brand img{width:58px;height:58px;border-radius:50%;border:1px solid var(--line-strong);object-fit:cover;background:#0f1218}
-    .brand-title{font-size:20px;font-weight:800}
+    .brand-title{font-size:20px;font-weight:800;color:var(--text)}
     .brand-sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
     .nav-links{display:flex;gap:26px;align-items:center}
     .nav-links a{font-size:14px;color:var(--text-soft);font-weight:500}
     .nav-links a:hover{color:var(--gold-soft)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 24px;font-weight:700;font-size:14px;transition:.25s ease;border:1px solid transparent}
+    .nav-links a.active{color:var(--gold-soft)}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+    .menu-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;font-size:14px}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 24px;font-weight:700;font-size:14px;transition:.25s ease;border:1px solid transparent;cursor:pointer}
     .btn-primary{background:var(--gold);color:#17130a;box-shadow:0 12px 26px rgba(201,168,76,.2)}
     .btn-primary:hover{background:var(--gold-soft);transform:translateY(-1px)}
     .btn-secondary{border-color:var(--line-strong);color:var(--text);background:transparent}
     .btn-secondary:hover{border-color:var(--gold);color:var(--gold-soft)}
     .btn-whatsapp{background:var(--green);color:#fff}
+    .btn-whatsapp:hover{transform:translateY(-1px);filter:brightness(1.04)}
 
-    .hero{padding:74px 0 42px}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
-    .hero-card{background:linear-gradient(180deg, rgba(201,168,76,.08), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
-    .hero-card ul{list-style:none;display:grid;gap:12px;margin-top:12px}
-    .hero-card li{color:var(--text-soft);padding-left:18px;position:relative}
-    .hero-card li::before{content:"•";position:absolute;left:0;top:0;color:var(--gold)}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    /* ── HERO ── */
+    .hero{padding:74px 0 48px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+    .hero-copy .eyebrow{margin-bottom:14px}
+    .hero-copy h1{margin-bottom:18px}
+    .hero-copy .lead{margin-bottom:28px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-urgency{
+      margin-top:16px;font-size:13px;color:var(--gold);font-weight:600;
+      display:flex;align-items:center;gap:7px;
+    }
+    .hero-urgency .blink{
+      display:inline-block;width:7px;height:7px;border-radius:50%;background:#e74c3c;
+      animation:pulse 1.6s ease-in-out infinite;
+    }
 
+    .hero-panel{
+      background:linear-gradient(180deg, rgba(201,168,76,.09), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:28px;padding:28px;
+      box-shadow:0 20px 50px rgba(0,0,0,.4);
+    }
+    .hero-panel h3{font-size:18px;margin-bottom:14px;color:var(--gold-soft)}
+    .hero-panel ul{list-style:none;display:grid;gap:12px}
+    .hero-panel li{
+      color:var(--text-soft);padding-left:20px;position:relative;font-size:15px;
+    }
+    .hero-panel li::before{content:"✦";position:absolute;left:0;top:0;color:var(--gold);font-size:12px;top:3px}
+    .flagship-links{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+    .flagship-links p{font-size:13px;color:var(--muted);margin-bottom:12px}
+    .flagship-links a{
+      display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;
+      color:var(--gold);border:1px solid var(--line-strong);border-radius:999px;
+      padding:7px 14px;margin:4px;transition:.2s ease;
+    }
+    .flagship-links a:hover{background:rgba(201,168,76,.08);border-color:var(--gold)}
+
+    /* ── AUTHORITY BAR ── */
+    .authority-bar{
+      padding:20px 0;
+      border-top:1px solid rgba(255,255,255,.05);
+      border-bottom:1px solid rgba(201,168,76,.14);
+      background:#0d1016;
+    }
+    .authority-inner{
+      display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;
+    }
+    .authority-label{font-size:13px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-right:6px}
+    .authority-chip{
+      border:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.06);
+      padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;color:var(--gold-soft);white-space:nowrap;
+    }
+
+    /* ── SECTION HEAD ── */
     .section-head{max-width:800px;margin:0 auto 42px;text-align:center}
+
+    /* ── SERVICE CARDS ── */
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));border:1px solid var(--line);border-radius:24px;padding:28px;transition:.25s ease}
-    .card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
-    .icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.22);margin-bottom:18px;color:var(--gold);font-size:22px;font-weight:800}
-    .card p{color:var(--text-soft);font-size:15px;margin:12px 0 18px}
-    .bullet-list{list-style:none;display:grid;gap:10px;margin-bottom:22px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);border-radius:24px;padding:28px;
+      transition:.3s ease;display:flex;flex-direction:column;
+    }
+    .card:hover{transform:translateY(-5px);border-color:rgba(201,168,76,.4);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+    .icon{
+      width:58px;height:58px;border-radius:18px;display:grid;place-items:center;
+      background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.22);
+      margin-bottom:18px;color:var(--gold);font-size:22px;font-weight:800;
+    }
+    .card h3{margin-bottom:10px}
+    .card p{color:var(--text-soft);font-size:15px;margin:0 0 16px;flex:1}
+    .bullet-list{list-style:none;display:grid;gap:8px;margin-bottom:20px}
     .bullet-list li{position:relative;padding-left:18px;color:var(--text-soft);font-size:14px}
     .bullet-list li::before{content:"•";position:absolute;left:0;top:0;color:var(--gold)}
+    .card-price{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:12px;letter-spacing:.02em}
+    .card-cta{
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid var(--line-strong);border-radius:999px;
+      padding:12px 20px;font-size:14px;font-weight:700;color:var(--text);
+      transition:.25s ease;background:transparent;margin-top:auto;
+    }
+    .card-cta:hover{border-color:var(--gold);color:var(--gold-soft);background:rgba(201,168,76,.05)}
+    .card-cta.primary{background:var(--gold);color:#17130a;border-color:var(--gold)}
+    .card-cta.primary:hover{background:var(--gold-soft)}
 
+    /* ── BACK TO HOME BANNER ── */
+    .back-banner{
+      background:linear-gradient(135deg, rgba(201,168,76,.1), rgba(255,255,255,.02));
+      border:1px solid rgba(201,168,76,.25);border-radius:24px;
+      padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    }
+    .back-banner h3{font-size:20px;margin-bottom:6px}
+    .back-banner p{color:var(--text-soft);font-size:15px}
+    .back-banner-actions{display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0}
+
+    /* ── TWO COL ── */
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .box{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));border:1px solid var(--line);border-radius:28px;padding:32px}
+    .box{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);border-radius:28px;padding:32px;
+    }
     .box p,.box li{color:var(--text-soft)}
     .steps{display:grid;gap:14px;margin-top:18px}
     .step{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}
     .step-num{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-strong);color:var(--gold);font-weight:800;background:rgba(201,168,76,.08)}
-    .step h4{font-size:18px;margin-bottom:4px}
+    .step h4{font-size:17px;margin-bottom:4px}
+    .step p{font-size:14px;color:var(--text-soft)}
 
-    .footer{padding:34px 0 100px;border-top:1px solid rgba(255,255,255,.06)}
+    /* ── CTA BOX ── */
+    .cta-box{
+      text-align:center;
+      background:linear-gradient(180deg, rgba(201,168,76,.08), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:28px;padding:48px 36px;
+    }
+    .cta-box h2{margin-bottom:14px}
+    .cta-box .lead{margin-bottom:24px}
+    .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    /* ── FOOTER ── */
+    .footer{padding:34px 0 120px;border-top:1px solid rgba(255,255,255,.06)}
     .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:24px}
     .footer p,.footer a{color:var(--text-soft);font-size:14px}
     .footer h4{margin-bottom:10px}
     .footer ul{list-style:none;display:grid;gap:10px}
-    .copyright{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;color:var(--muted)}
+    .footer-disclaimer{margin-top:18px;padding:12px 0;border-top:1px solid rgba(255,255,255,.05);font-size:13px;color:var(--muted);text-align:center}
+    .copyright{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;color:var(--muted);text-align:center}
+
+    /* ── WA FLOAT ── */
     .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;box-shadow:0 18px 34px rgba(37,211,102,.28)}
 
+    /* ── MOBILE STICKY ── */
+    .mobile-sticky{
+      display:none;
+      position:fixed;bottom:0;left:0;right:0;z-index:100;
+      background:#0b0d12;border-top:1px solid rgba(201,168,76,.28);
+      padding:10px 16px;gap:10px;
+    }
+    .mobile-sticky a{
+      flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+      border:1px solid rgba(201,168,76,.5);border-radius:12px;padding:13px;
+      font-size:14px;font-weight:700;color:var(--gold-soft);
+      transition:.2s ease;background:rgba(201,168,76,.06);
+    }
+    .mobile-sticky a:hover{background:rgba(201,168,76,.12)}
+    .mobile-sticky a.wa-btn{background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.4);color:#25D366}
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 1024px){
       .hero-grid,.two-col,.services-grid,.footer-grid{grid-template-columns:1fr 1fr}
     }
     @media (max-width: 760px){
-      .nav,.topbar-inner,.hero-actions{flex-wrap:wrap}
-      .nav-links{display:none}
+      .menu-toggle{display:inline-flex}
+      .nav-links{
+        display:none;position:absolute;left:16px;right:16px;top:82px;
+        flex-direction:column;align-items:flex-start;gap:16px;
+        background:#0f131a;border:1px solid var(--line);border-radius:18px;padding:18px;z-index:99;
+      }
+      .nav-links.show{display:flex}
+      .nav-actions .btn-secondary{display:none}
+      .topbar-inner,.topbar-left,.topbar-right{justify-content:center;text-align:center}
       .hero-grid,.two-col,.services-grid,.footer-grid{grid-template-columns:1fr}
-      .btn{width:100%}
+      .hero-actions,.cta-actions,.back-banner-actions{flex-direction:column}
+      .btn,.card-cta{width:100%}
       .section{padding:64px 0}
-      .card,.box,.hero-card{padding:24px}
+      .card,.box,.hero-panel,.cta-box{padding:24px}
+      .back-banner{flex-direction:column;align-items:flex-start}
+      .mobile-sticky{display:flex}
+      .wa-float{bottom:80px}
+      .authority-label{display:none}
     }
   </style>
 </head>
 <body>
+
+  <!-- URGENCY STRIP -->
+  <div class="urgency-strip">
+    <span class="dot"></span>
+    Only 6 slots remaining this month — Book before they close
+  </div>
+
   <div class="topbar">
     <div class="container topbar-inner">
-      <a href="tel:+917428333623">Call: +91 7428 333 623</a>
-      <a href="mailto:bisht.sanjeev@gmail.com">bisht.sanjeev@gmail.com</a>
+      <div class="topbar-left">
+        <a href="tel:+917428333623">Call: +91 7428 333 623</a>
+        <a href="mailto:bisht.sanjeev@gmail.com">bisht.sanjeev@gmail.com</a>
+      </div>
+      <div class="topbar-right">
+        <a href="https://6e4wgd.flexifunnels.com/professions" target="_blank" rel="noopener">Free Guide: Professions as per Numerology</a>
+      </div>
     </div>
   </div>
 
   <div class="nav-wrap">
     <div class="container nav">
-      <a href="/" class="brand">
+      <a href="index.html" class="brand">
         <img src="https://bishtnumerologyy.com/wp-content/uploads/2024/11/logo-numerology.png" alt="The Bisht Numerologyy logo" />
         <div>
           <div class="brand-title">The Bisht Numerologyy</div>
           <div class="brand-sub">Specialized Service Portfolio</div>
         </div>
       </a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="#services-grid">Services</a>
-        <a href="#fit">Who It Helps</a>
-        <a href="#contact-cta">Contact</a>
-        <a href="https://bishtnumerologyy.com/blog" target="_blank" rel="noopener">Blog</a>
+
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">Menu</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#testimonials">Results</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://bishtnumerologyy.com/blog/" target="_blank" rel="noopener">Blog</a>
       </div>
-      <a class="btn btn-primary" href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp</a>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-primary" href="index.html#contact">Book Consultation</a>
+      </div>
     </div>
   </div>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
           <div class="eyebrow">Extended Service Catalog</div>
-          <h1>Explore the Specialized Services Beyond the Homepage Offers.</h1>
-          <p class="lead">This page is designed for the remaining services that should not crowd the homepage but still deserve a premium presentation and a clear enquiry path.</p>
+          <h1>Every Service. One Expert. Zero Guesswork.</h1>
+          <p class="lead">From name correction and crystal guidance to vastu energy and company naming — specialized alignment consulting for every area of your personal and professional life.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#services-grid">View Services</a>
-            <a class="btn btn-secondary" href="/">Go to Home</a>
+            <a class="btn btn-primary" href="#services-grid">Explore Services</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp Now</a>
+            <a class="btn btn-secondary" href="index.html">← Back to Home</a>
+          </div>
+          <div class="hero-urgency">
+            <span class="blink"></span>
+            Only 6 consultation slots open this month.
           </div>
         </div>
-        <div class="hero-card">
-          <h3>Why this page structure works better</h3>
+        <div class="hero-panel">
+          <h3>Also available on the Home page</h3>
           <ul>
-            <li>Home page stays focused and conversion-oriented.</li>
-            <li>Remaining services get proper visibility without clutter.</li>
-            <li>Visitors can scan specialized offers more comfortably.</li>
-            <li>Later, each service can become its own dedicated SEO page.</li>
+            <li>Full Numerology Consultation — Starting ₹2,999</li>
+            <li>Scientific Business Logo Analysis — Starting ₹3,999</li>
+            <li>Aura Scanning — Starting ₹1,999</li>
           </ul>
+          <div class="flagship-links">
+            <p>Jump directly to a flagship service:</p>
+            <a href="index.html#services">Numerology →</a>
+            <a href="index.html#services">Logo Analysis →</a>
+            <a href="index.html#services">Aura Scanning →</a>
+            <a href="index.html#contact">Book Consultation →</a>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- AUTHORITY BAR -->
+    <div class="authority-bar">
+      <div class="container authority-inner">
+        <span class="authority-label">Trusted by decision-makers across India</span>
+        <span class="authority-chip">IIM Alumni Clients</span>
+        <span class="authority-chip">MNC Professionals</span>
+        <span class="authority-chip">500+ Business Owners</span>
+        <span class="authority-chip">Delhi NCR's #1 Numerology Brand</span>
+      </div>
+    </div>
+
+    <!-- SERVICES GRID -->
     <section class="section" id="services-grid">
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">Additional Services</div>
           <h2>Specialized Guidance for Personal, Professional and Family Alignment</h2>
-          <p class="lead">Keep these services on the Services page first. The best-performing ones can later be expanded into separate SEO landing pages.</p>
+          <p class="lead">Each service is a focused intervention. Not generic advice — a structured diagnosis for your specific situation.</p>
         </div>
 
         <div class="services-grid">
+
           <article class="card">
             <div class="icon">04</div>
             <h3>Name Correction</h3>
@@ -182,9 +406,10 @@
             <ul class="bullet-list">
               <li>Useful for personal and business naming</li>
               <li>Supports stronger energetic identity</li>
-              <li>Focused correction rather than random change</li>
+              <li>Focused correction, not random change</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta" href="https://wa.me/917428333623?text=Hi%2C%20I%20want%20to%20enquire%20about%20Name%20Correction" target="_blank" rel="noopener">WhatsApp Enquiry</a>
           </article>
 
           <article class="card">
@@ -192,23 +417,25 @@
             <h3>Crystal Guidance</h3>
             <p>Receive direction on crystal selection based on alignment needs, clarity and energetic support.</p>
             <ul class="bullet-list">
-              <li>Guided rather than generic recommendation</li>
+              <li>Guided, not generic recommendation</li>
               <li>Useful for focus, calm and support</li>
-              <li>Can complement other corrective work</li>
+              <li>Complements other corrective work</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta" href="https://wa.me/917428333623?text=Hi%2C%20I%20want%20to%20enquire%20about%20Crystal%20Guidance" target="_blank" rel="noopener">WhatsApp Enquiry</a>
           </article>
 
           <article class="card">
             <div class="icon">06</div>
             <h3>Visiting Card Analysis</h3>
-            <p>Review whether your business card supports authority, recall and a better first professional impression.</p>
+            <p>Review whether your business card supports authority, recall and a stronger first professional impression.</p>
             <ul class="bullet-list">
               <li>Business-facing visual correction</li>
               <li>Useful for founders and professionals</li>
               <li>Supports stronger brand presentation</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta" href="https://wa.me/917428333623?text=Hi%2C%20I%20want%20to%20enquire%20about%20Visiting%20Card%20Analysis" target="_blank" rel="noopener">WhatsApp Enquiry</a>
           </article>
 
           <article class="card">
@@ -220,7 +447,8 @@
               <li>Supports alignment-based review</li>
               <li>Helps assess hidden mismatch points</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta" href="https://wa.me/917428333623?text=Hi%2C%20I%20want%20to%20enquire%20about%20Mobile%20Number%20Analysis" target="_blank" rel="noopener">WhatsApp Enquiry</a>
           </article>
 
           <article class="card">
@@ -232,7 +460,8 @@
               <li>Useful for image-conscious professionals</li>
               <li>Distinctive differentiator service</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta" href="https://wa.me/917428333623?text=Hi%2C%20I%20want%20to%20enquire%20about%20Wrist%20Watch%20Analysis" target="_blank" rel="noopener">WhatsApp Enquiry</a>
           </article>
 
           <article class="card">
@@ -244,7 +473,8 @@
               <li>Emotionally high-value service</li>
               <li>Clear standalone premium offer</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta" href="https://wa.me/917428333623?text=Hi%2C%20I%20want%20to%20enquire%20about%20New%20Baby%20Name%20Designing" target="_blank" rel="noopener">WhatsApp Enquiry</a>
           </article>
 
           <article class="card">
@@ -256,7 +486,8 @@
               <li>Supports environmental alignment</li>
               <li>Can complement personal consultation</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta" href="https://wa.me/917428333623?text=Hi%2C%20I%20want%20to%20enquire%20about%20Vastu%20Energy%20Guidance" target="_blank" rel="noopener">WhatsApp Enquiry</a>
           </article>
 
           <article class="card">
@@ -268,7 +499,8 @@
               <li>Supports identity and positioning</li>
               <li>Can be paired with logo analysis</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta" href="https://wa.me/917428333623?text=Hi%2C%20I%20want%20to%20enquire%20about%20Company%20Name%20Designing" target="_blank" rel="noopener">WhatsApp Enquiry</a>
           </article>
 
           <article class="card">
@@ -280,52 +512,74 @@
               <li>Useful for business owners and founders</li>
               <li>Builds authority beyond one-off services</li>
             </ul>
-            <a class="btn btn-secondary" href="https://wa.me/917428333623" target="_blank" rel="noopener">Enquire Now</a>
+            <div class="card-price">Enquire for pricing</div>
+            <a class="card-cta primary" href="index.html#contact">Book a Consultation</a>
           </article>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="fit">
+    <!-- BACK TO HOME BANNER -->
+    <section class="section" style="padding-top:0;" id="fit">
+      <div class="container">
+        <div class="back-banner">
+          <div>
+            <h3>Looking for Numerology, Logo Analysis or Aura Scanning?</h3>
+            <p>The three flagship services with fixed pricing are on the Home page — along with the full consultation booking form.</p>
+          </div>
+          <div class="back-banner-actions">
+            <a class="btn btn-primary" href="index.html#services">View Flagship Services</a>
+            <a class="btn btn-secondary" href="index.html#contact">Book Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT HELPS + HOW TO USE -->
+    <section class="section" style="padding-top:0;">
       <div class="container two-col">
         <div class="box">
           <div class="eyebrow">Who This Page Helps</div>
-          <h2>Useful When the Visitor Needs a More Specific Service</h2>
+          <h2>Visitors Who Know What They Need</h2>
           <ul class="bullet-list" style="margin-top:16px;">
             <li>People who already know what they want checked</li>
             <li>Visitors comparing multiple specialized services</li>
             <li>Families seeking naming or home-related guidance</li>
             <li>Professionals looking for premium niche advisory</li>
+            <li>Business owners who need name or company alignment</li>
           </ul>
         </div>
         <div class="box">
-          <div class="eyebrow">Best Next Step</div>
-          <h2>How to Use This Services Page Properly</h2>
+          <div class="eyebrow">Unsure Where to Start?</div>
+          <h2>Start With WhatsApp — We Will Guide You</h2>
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
-              <div><h4>Keep Home focused</h4><p>Only flagship services belong on Home.</p></div>
+              <div><h4>Share your main concern</h4><p>Business, personal, family or identity — anything that feels off or stuck.</p></div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
-              <div><h4>Send overflow here</h4><p>All other services should live on this Services page.</p></div>
+              <div><h4>We recommend the right service</h4><p>No upselling. Just the most relevant starting point for your situation.</p></div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
-              <div><h4>Split later for SEO</h4><p>Create separate individual pages for the most important services.</p></div>
+              <div><h4>Book and begin</h4><p>Consultation confirmed within 4 hours. Online or in-person, your choice.</p></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact-cta" style="padding-top:0;">
-      <div class="container box" style="text-align:center;background:linear-gradient(180deg, rgba(201,168,76,.08), rgba(255,255,255,.02));">
+    <!-- FINAL CTA -->
+    <section class="section" style="padding-top:0;" id="contact-cta">
+      <div class="container cta-box">
         <div class="eyebrow">Contact</div>
-        <h2>Need Help Choosing the Right Service?</h2>
-        <p class="lead">Let the visitor start with WhatsApp when they are unsure which service is right for them.</p>
-        <div class="hero-actions" style="justify-content:center;">
-          <a class="btn btn-primary" href="https://wa.me/917428333623" target="_blank" rel="noopener">WhatsApp Now</a>
+        <h2>Not Sure Which Service Is Right for You?</h2>
+        <p class="lead">Start a WhatsApp conversation and describe what feels off. We will tell you exactly where to begin.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://wa.me/917428333623?text=Hi%2C%20I%20need%20help%20choosing%20the%20right%20service" target="_blank" rel="noopener">💬 WhatsApp Now</a>
+          <a class="btn btn-secondary" href="index.html#contact">Fill Enquiry Form</a>
           <a class="btn btn-secondary" href="mailto:bisht.sanjeev@gmail.com">Email Enquiry</a>
         </div>
       </div>
@@ -342,9 +596,12 @@
         <div>
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#services-grid">Services</a></li>
-            <li><a href="https://bishtnumerologyy.com/blog" target="_blank" rel="noopener">Blog</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="index.html#testimonials">Results</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="https://bishtnumerologyy.com/blog/" target="_blank" rel="noopener">Blog</a></li>
           </ul>
         </div>
         <div>
@@ -356,10 +613,30 @@
           </ul>
         </div>
       </div>
+      <div class="footer-disclaimer">
+        bishtnumerologyy.com is a premium consulting brand. Not affiliated with any religious institution.
+      </div>
       <div class="copyright">© 2026 The Bisht Numerologyy. All rights reserved.</div>
     </div>
   </footer>
 
   <a class="wa-float" href="https://wa.me/917428333623" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WA</a>
+
+  <!-- MOBILE STICKY BAR -->
+  <div class="mobile-sticky">
+    <a href="tel:+917428333623">📞 Call Now</a>
+    <a class="wa-btn" href="https://wa.me/917428333623" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('show'));
+      });
+    }
+  </script>
 </body>
 </html>
